@@ -17,18 +17,11 @@
 
     <main>
         <div class="containerJuego">
-            <h4>Piedra, Papel, Tijera, Spock, Lagarto:</h4>
-            <p id="instrucciones">
-                TIJERAS cortan el papel y decapitan al lagarto;
-                PAPEL envuelve a tijeras y desaprueba a Spock; PIEDRA aplasta a lagarto
-                y rompen las tijeras; LAGARTO envenena a Spock y devora el papel; y
-                por último, SPOCK aplasta las tijeras y desintegra la piedra.
-            </p>
             <div id="score">
-                Score: Jugador 0 - PC 0
+                Jugador: 0 | Computadora: 0
             </div>
             <p id="mensajePC"></p>
-            <p id="ronda"> Ronda: 1 de 5</p>
+            <span id="ronda"> Ronda: 1 de 5</span>
             <span id="resultado">
             </span>
             <div id="opciones">
@@ -38,6 +31,12 @@
                 <button id="lagarto">Lagarto</button>
                 <button id="spock">Spock</button>
             </div>
+            <p id="instrucciones">
+                TIJERAS cortan el papel y decapitan al lagarto;
+                PAPEL envuelve a tijeras y desaprueba a Spock; PIEDRA aplasta a lagarto
+                y rompen las tijeras; LAGARTO envenena a Spock y devora el papel; y
+                por último, SPOCK aplasta las tijeras y desintegra la piedra.
+            </p>
         </div>
     </main>
     <script src='../js/player.js'></script>

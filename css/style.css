@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 * {
     width: auto;
@@ -14,18 +14,24 @@ body {
     height: 90vh;
     width: 100%;
 
-    background-color: black;
-    color: white;
-    overflow-x: hidden;
+    background: black;
+    background: url(../assets/images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
+    overflow-x: hidden;
+}
+
+body, button {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
     font-style: normal;
     text-align: center;
 }
 
 header {
-    margin: 1rem;
+    margin-top: 2rem;
 }
 
 main {
@@ -46,8 +52,15 @@ main {
     margin: .5rem;
     padding: 2rem;
 
+    border: 1px solid rgb(250, 247, 247);
     border-radius: 5%;
-    box-shadow: -3px -3px 7px #111111, 2px 2px 5px rgb(22, 22, 22, 0.288);
+    background: rgba(88, 82, 82, 0.219);
+    backdrop-filter: blur(8px);
+}
+
+#instrucciones, table {
+    background: rgb(0, 0, 0, 0.47);
+    backdrop-filter: blur(8px);
 }
 
 form {
@@ -62,40 +75,68 @@ h1 {
     font-size: 3rem;
 }
 
+h3,
+h5,
+label,
+#mensaje, #score,
+#mensajePC,
+#empezarJuego,
+.btnForm,
+table,
+#instrucciones {
+    color: white;
+}
+
 h3 {
-    color: rgb(56, 56, 90);
+    margin: .3rem;
 }
 
 h4 {
-    color: rgb(108, 122, 134);
+    color: rgb(224, 62, 62);
     font-size: 1.5rem;
 }
 
-.btnForm{
+h5 {
+    font-size: 1rem;
+}
+
+.btnForm {
     margin: 2rem 1rem;
     font-size: 1rem;
 }
 
 #empezarJuego {
-    padding: .3rem;
+    padding: .7rem;
     margin: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
-.btnForm, #empezarJuego, #cerrarSesion, #opciones button {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+.btnForm,
+#empezarJuego,
+#cerrarSesion,
+#score {
+    border: 1px solid white;
+}
+
+button {
+    cursor: pointer;
+}
+
+.btnForm,
+#cerrarSesion {
+    background-color: rgba(255, 255, 255, 0.356);
+
+}
+
+.btnForm,
+#opciones button {
+    padding: .3rem;
 }
 
 #cerrarSesion {
     margin: 2rem;
     padding: .5rem;
-
-    background-color: black;
-    color: red;
-
-    border: 1px solid white;
+    color: black;
 }
 
 label {
@@ -104,38 +145,45 @@ label {
 
 #instrucciones {
     width: 25rem;
-    margin: 2rem;
+    font-size: .8rem;
+    padding: 1rem;
 }
 
 #mensaje {
-    margin-top: 2rem;
-    color: red;
+    font-size: 1rem;
+    margin-top: 3rem;
+    padding: .4rem;
 }
 
 table {
     border-collapse: collapse;
 }
 
-table, th, td {
-    border: 1px solid white;
-}
-
-th, td {
-    padding: .5rem;
+th,
+td,
+#score {
+    padding: 1rem;
 }
 
 #score {
-    margin: auto;
-    width: 20rem;
-    border: 1px solid white;
+    margin: 2rem;
+    width: 30rem;
+    font-size: 1.3rem;
+}
 
-    font-size: 2rem;
-    background-color: rgb(56, 56, 90);
+#score, #instrucciones, table, #opciones button {
+    border-radius: 20px;
+}
+
+#empezarJuego, #score {
+    background-color: rgb(224, 62, 62);
+
 }
 
 #ronda {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: rgb(173, 166, 197);
+    margin-bottom: 3rem;
 }
 
 #opciones {
@@ -145,16 +193,31 @@ th, td {
 }
 
 #opciones button {
-    margin: .3rem;
+    margin: .7rem;
     width: 5rem;
     height: 5rem;
-    font-size: 1.3rem;
-
-    border-radius: 50%;
+    font-size: .8rem;
+    padding: .5rem;
+    background: rgba(255, 255, 255, 0.479);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
 }
 
-#tijera:hover, #piedra:hover, #papel:hover, #lagarto:hover, #spock:hover {
-    background-color: black;
-    border: 3px solid white;
+
+#tijera:hover,
+#piedra:hover,
+#papel:hover,
+#lagarto:hover,
+#spock:hover {
+    background: rgba(0, 0, 0, 0.479);
+    backdrop-filter: blur(8px);
+    border: 1px solid white;
     color: white;
+    text-align: center;
+}
+
+.containerJuego, #instrucciones {
+    text-align: center;
+    margin: auto;
 }
