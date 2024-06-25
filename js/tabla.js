@@ -1,6 +1,8 @@
 /* -------------------------------------------------------------------------------------- */
 /* -------------------------------> TABLA DE POSICIONES <-------------------------------- */
 /* -------------------------------------------------------------------------------------- */
+
+// Muestro tabla de posiciones, y aplico funciones en botón Jugar y Cerrar Sesión.
 document.addEventListener('DOMContentLoaded', () => {
     displayTablaPosiciones();
 
@@ -18,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Mostrar tabla de posiciones con los usuarios registrados, ordenados por puntaje. 
 function displayTablaPosiciones() {
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
     usuarios.sort((a, b) => b.score - a.score);

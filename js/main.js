@@ -2,7 +2,7 @@
 const loginForm = document.getElementById('loginForm');
 const mensaje = document.getElementById('mensaje');
 
-// Evento de envío del formulario
+// Loguearse.
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 

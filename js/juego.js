@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------------------- */
+/* -------------------------------------> JUEGO <---------------------------------------- */
+/* -------------------------------------------------------------------------------------- */
+
 class Juego {
     constructor() {
         this.jugadorScore = 0;
@@ -10,7 +14,7 @@ class Juego {
         this.mensajePC = document.getElementById('mensajePC');
         this.initButtons();
     };
-
+    // Botones de las opciones.
     initButtons() {
         const botones = document.querySelectorAll('#opciones button');
         botones.forEach(button => {
@@ -18,6 +22,7 @@ class Juego {
         });
     };
 
+    // Elección del jugador y de la pc, actualización de ronda y score:
     jugarJuego(opcionJugador) {
         const opcionPC = this.opciones[Math.floor(Math.random() * this.opciones.length)];
         this.mensajePC.textContent = `La PC elegió: ${opcionPC}`;
@@ -30,6 +35,7 @@ class Juego {
         };
     };
 
+    // Obtengo ganador
     obtenerResultado(opcionJugador, opcionPC) {
         switch (opcionJugador) {
             case 'piedra':
@@ -92,6 +98,7 @@ class Juego {
         };
     };
 
+    // Funciones para actualizar score y rondas:
     actualizarScore(resultado) {
         if (resultado === 'jugador') {
             this.jugadorScore++;
@@ -135,6 +142,7 @@ class Juego {
         usuarios = usuarios.map(user => user.usuario === usuarioActual.usuario ? usuarioActual : user);
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
+        // Resetear en caso de que quiera volver a jugar:
         let jugarOtraRonda = true;
         while (jugarOtraRonda) {
             jugarOtraRonda = confirm('¿Desea jugar otra ronda?');
