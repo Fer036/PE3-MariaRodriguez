@@ -7,27 +7,28 @@ class Juego {
         this.scoreDisplay = document.getElementById('score');
         this.roundDisplay = document.getElementById('ronda');
         this.resultDisplay = document.getElementById('resultado');
+        this.mensajePC = document.getElementById('mensajePC');
         this.initButtons();
-    }
+    };
 
     initButtons() {
         const botones = document.querySelectorAll('#opciones button');
         botones.forEach(button => {
             button.addEventListener('click', () => this.jugarJuego(button.id));
         });
-    }
+    };
 
     jugarJuego(opcionJugador) {
         const opcionPC = this.opciones[Math.floor(Math.random() * this.opciones.length)];
-
+        this.mensajePC.textContent = `La PC elegió: ${opcionPC}`;
         const resultado = this.obtenerResultado(opcionJugador, opcionPC);
         this.actualizarScore(resultado);
         this.actualizarRonda();
 
         if (this.round > 5) {
             this.finalJuego();
-        }
-    }
+        };
+    };
 
     obtenerResultado(opcionJugador, opcionPC) {
         switch (opcionJugador) {
@@ -41,7 +42,7 @@ class Juego {
                         return 'jugador';
                     default:
                         return 'empate';
-                }
+                };
             case 'papel':
                 switch (opcionPC) {
                     case 'tijera':
@@ -52,7 +53,7 @@ class Juego {
                         return 'jugador';
                     default:
                         return 'empate';
-                }
+                };
             case 'tijera':
                 switch (opcionPC) {
                     case 'piedra':
@@ -63,7 +64,7 @@ class Juego {
                         return 'jugador';
                     default:
                         return 'empate'
-                }
+                };
             case 'lagarto':
                 switch (opcionPC) {
                     case 'piedra':
@@ -74,7 +75,7 @@ class Juego {
                         return 'jugador';
                     default:
                         return 'empate';
-                }
+                };
             case 'spock':
                 switch (opcionPC) {
                     case 'papel':
@@ -85,26 +86,26 @@ class Juego {
                         return 'jugador';
                     default:
                         return 'empate';
-                }
+                };
             default:
                 return 'empate';
-        }
-    }
+        };
+    };
 
     actualizarScore(resultado) {
         if (resultado === 'jugador') {
             this.jugadorScore++;
         } else if (resultado === 'computadora') {
             this.pcScore++;
-        }
+        };
 
         this.scoreDisplay.textContent = `Score: Jugador ${this.jugadorScore} | PC: ${this.pcScore}`;
-    }
+    };
 
     actualizarRonda() {
         this.round++;
         this.roundDisplay.textContent = `Ronda ${this.round} de 5`;
-    }
+    };
 
     finalJuego() {
         const ganador = this.jugadorScore > this.pcScore ? 'Jugador' : this.pcScore > this.jugadorScore ? 'PC' : 'Empate';
@@ -144,13 +145,14 @@ class Juego {
                 this.scoreDisplay.textContent = `Score: Jugador ${this.jugadorScore} | PC: ${this.pcScore}`;
                 this.roundDisplay.textContent = `Ronda ${this.round} de 5`;
                 this.resultDisplay.textContent = '';
+                this.mensajePC.textContent = '';
                 break;
             } else {
                 // Redirigir a la página de tabla de posiciones
                 window.location.replace('../pages/tabla.html');
-            }
-        }
-    }
-}
+            };
+        };
+    };
+};
 
 const juego = new Juego();
