@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Piedra, papel o tijera</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/style.css'>
+</head>
+
+<body>
+    <header>
+        <h1>¡A JUGAR!</h1>
+        <h3>María Rodríguez</h3>
+    </header>
+
+    <main>
+        <div class="containerJuego">
+            <h4>Piedra, Papel, Tijera, Spock, Lagarto:</h4>
+            <p id="instrucciones">
+                TIJERAS cortan el papel y decapitan al lagarto;
+                PAPEL envuelve a tijeras y desaprueba a Spock; PIEDRA aplasta a lagarto
+                y rompen las tijeras; LAGARTO envenena a Spock y devora el papel; y
+                por último, SPOCK aplasta las tijeras y desintegra la piedra.
+            </p>
+            <div id="score">
+                Score: Jugador 0 - PC 0
+            </div>
+            <p id="ronda"> Ronda: 1 de 5</p>
+            <span id="resultado">
+            </span>
+            <div id="opciones">
+                <button id="piedra">Piedra</button>
+                <button id="papel">Papel</button>
+                <button id="tijera">Tijera</button>
+                <button id="lagarto">Lagarto</button>
+                <button id="spock">Spock</button>
+            </div>
+        </div>
+    </main>
+    <script src='../js/player.js'></script>
+    <script src='../js/juego.js'></script>
+</body>
+
+</html>

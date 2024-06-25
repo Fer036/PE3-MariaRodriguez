@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Piedra, Papel o Tijera</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/style.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>María Rodríguez</h1>
+        <h4>Pre-Entrega n° 3 [CH]</h4>
+    </header>
+
+    <main>
+        <div class="container" id="container">
+            <h4>Login</h4>
+
+            <form id="loginForm">
+                <label for="usuario"> Usuario:</i></label>
+                <span>
+                    <i class="bi bi-person-fill"></i>
+                    <input type="text" id="usuario" required>
+                </span>
+                <label for="contrasena">Contraseña: </label>
+                <span>
+                    <i class="bi bi-key-fill"></i>
+                    <input type="password" id="contrasena" required>
+                </span>
+                <button class="btnForm" type="submit">Ingresar</button>
+            </form>
+            <p id="mensaje"></p>
+        </div>
+    </main>
+    <script src='./js/player.js'></script>
+    <script src='./js/main.js'></script>
+</body>
+
+</html>
