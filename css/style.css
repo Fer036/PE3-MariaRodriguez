@@ -11,7 +11,7 @@
 }
 
 body {
-    height: 90vh;
+    height: 100vh;
     width: 100%;
 
     background: black;
@@ -224,14 +224,17 @@ td,
 
 /* Responsive */
 
-@media (max-width: 600px) {
-    .container {
-        width: 100%;
-        height: auto;
-        padding: 1rem;
-        margin: 0.5rem;
+@media (max-width: 740px) {
+    body {
+        height: 100vh;
+        background-size: cover;
+        text-align: center;
     }
     
+    h1, h3 {
+        margin: auto;
+    }
+
     h1 {
         font-size: 2rem;
     }
@@ -241,55 +244,22 @@ td,
     }
 
     #score {
-        width: 100%;
-        font-size: 1rem;
+        width: 85%;
+        font-size: calc(16px + 6 * ((100vw - 320px) / 680));
     }
 
     #instrucciones {
-        width: 100%;
+        margin: 1.5rem;
+        width: 90%;
         font-size: 0.7rem;
         padding: 0.5rem;
     }
 
     #opciones button {
+        margin: auto;
         width: 4rem;
         height: 4rem;
         font-size: 0.7rem;
         padding: 0.3rem;
-    }
-}
-
-@media (max-width: 350px) {
-    .container {
-        width: 100%;
-        height: auto;
-        padding: 0.5rem;
-        margin: 0.5rem;
-    }
-    
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    h3 {
-        font-size: 1.2rem;
-    }
-
-    #score {
-        width: 100%;
-        font-size: 0.9rem;
-    }
-
-    #instrucciones {
-        width: 100%;
-        font-size: 0.6rem;
-        padding: 0.3rem;
-    }
-
-    #opciones button {
-        width: 3.5rem;
-        height: 3.5rem;
-        font-size: 0.6rem;
-        padding: 0.2rem;
     }
 }
