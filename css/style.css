@@ -27,10 +27,11 @@ canvas {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; 
+    z-index: -1;
 }
 
-body, button {
+body,
+button {
     font-family: "Source Code Pro", monospace;
     font-optical-sizing: auto;
     font-weight: 300;
@@ -65,11 +66,13 @@ main {
     background: rgba(255, 255, 255, 0.562);
     backdrop-filter: blur(8px);
 }
+
 i {
     color: rgb(114, 8, 8);
 }
 
-#instrucciones, table {
+#instrucciones,
+table {
     background: rgba(255, 255, 255, 0.808);
     backdrop-filter: blur(8px);
 }
@@ -86,11 +89,12 @@ h1 {
     font-size: 3rem;
 }
 
-h1, 
+h1,
 h3,
 h5,
 label,
-#mensaje, #score,
+#mensaje,
+#score,
 #mensajePC,
 #empezarJuego,
 .btnForm {
@@ -142,8 +146,7 @@ button {
 
 }
 
-.btnForm,
-#opciones button {
+.btnForm {
     padding: .3rem;
 }
 
@@ -180,17 +183,21 @@ td {
 
 
 #score {
-    margin: 2rem;
+    margin: auto;
+    margin-bottom: 2rem;
     width: 30rem;
     font-size: 1.3rem;
     padding: 1rem;
 }
 
-#score, #instrucciones, table, #opciones button {
+#score,
+#instrucciones,
+table{
     border-radius: 20px;
 }
 
-#empezarJuego, #score {
+#empezarJuego,
+#score {
     background-color: rgb(224, 62, 62);
 
 }
@@ -198,40 +205,62 @@ td {
 #ronda {
     font-size: 1rem;
     color: rgb(173, 166, 197);
-    margin-bottom: 3rem;
 }
 
-#opciones {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.btn-flip {
+    opacity: 1;
+    margin-top: 2rem;
 
-#opciones button {
-    margin: 1rem;
-    width: 5rem;
-    height: 5rem;
-    font-size: .8rem;
-    padding: .5rem;
-    background: rgba(255, 255, 255, 0.61);
-    backdrop-filter: blur(8px);
-    color: white;
-}
-
-
-#tijera:hover,
-#piedra:hover,
-#papel:hover,
-#lagarto:hover,
-#spock:hover {
-    background: rgba(0, 0, 0, 0.479);
-    backdrop-filter: blur(8px);
-    border: 1px solid white;
-    color: white;
+    line-height: 40px;
     text-align: center;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+
+    position: relative;
+
 }
 
-.containerJuego, #instrucciones {
+.btn-flip:hover:after {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+}
+
+.btn-flip:hover:before {
+    opacity: 0;
+    transform: translateY(50%) rotateX(90deg);
+}
+
+.btn-flip:after {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    color: #323237;
+    display: block;
+    transition: 0.5s;
+    position: absolute;
+    background: #adadaf;
+    content: attr(data-back);
+    transform: translateY(-50%) rotateX(90deg);
+}
+
+.btn-flip:before {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: #adadaf;
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition: 0.5s;
+    position: relative;
+    background: #323237;
+    content: attr(data-front);
+    transform: translateY(0) rotateX(0);
+}
+
+.containerJuego,
+#instrucciones {
     text-align: center;
     margin: 2rem auto;
 }
@@ -244,8 +273,9 @@ td {
         background-size: cover;
         text-align: center;
     }
-    
-    h1, h3 {
+
+    h1,
+    h3 {
         margin: auto;
     }
 
@@ -267,13 +297,5 @@ td {
         width: 90%;
         font-size: 0.7rem;
         padding: 0.5rem;
-    }
-
-    #opciones button {
-        margin: auto;
-        width: 4rem;
-        height: 4rem;
-        font-size: 0.7rem;
-        padding: 0.3rem;
     }
 }
