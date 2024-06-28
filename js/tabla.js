@@ -13,10 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cerrarSesion = document.getElementById('cerrarSesion');
     cerrarSesion.addEventListener('click', () => {
-        // Eliminar usuario actual de localStorage
-        localStorage.removeItem('usuarioActual');
-        // Redirigir a la página de login
-        window.location.href = '../index.html';
+        Toastify({
+            text: 'Cerrando sesión',
+            duration: 3000,
+            close: true,
+            style: {
+                background: "linear-gradient(187deg, rgba(58,58,58,1) 13%, rgba(209,20,20,1) 100%)",
+                border: "1px solid white"
+            },
+        }).showToast();
+        setTimeout(() => {
+            // Eliminar usuario actual de localStorage
+            localStorage.removeItem('usuarioActual');
+            // Redirigir a la página de login
+            window.location.href = '../index.html';
+        }, 1500);
     });
 });
 

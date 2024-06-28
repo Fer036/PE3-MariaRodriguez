@@ -11,15 +11,23 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
 
-    background: black;
-    background: url(../assets/images/bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    margin: 0;
+    padding: 0;
 
-    overflow-x: hidden;
+    overflow: hidden;
+    position: relative;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
 }
 
 body, button {
@@ -52,14 +60,17 @@ main {
     margin: .5rem;
     padding: 2rem;
 
-    border: 1px solid rgb(250, 247, 247);
+    border: 3px solid rgb(114, 8, 8);
     border-radius: 5%;
-    background: rgba(88, 82, 82, 0.219);
+    background: rgba(255, 255, 255, 0.562);
     backdrop-filter: blur(8px);
+}
+i {
+    color: rgb(114, 8, 8);
 }
 
 #instrucciones, table {
-    background: rgb(0, 0, 0, 0.47);
+    background: rgba(255, 255, 255, 0.808);
     backdrop-filter: blur(8px);
 }
 
@@ -75,15 +86,14 @@ h1 {
     font-size: 3rem;
 }
 
+h1, 
 h3,
 h5,
 label,
 #mensaje, #score,
 #mensajePC,
 #empezarJuego,
-.btnForm,
-table,
-#instrucciones {
+.btnForm {
     color: white;
 }
 
@@ -103,6 +113,10 @@ h5 {
 .btnForm {
     margin: 2rem 1rem;
     font-size: 1rem;
+}
+
+.btnForm:hover {
+    background-color: rgb(114, 8, 8);
 }
 
 #empezarJuego {
@@ -146,7 +160,7 @@ label {
 #instrucciones {
     width: 25rem;
     font-size: .8rem;
-    padding: 1rem;
+    padding: 1.4rem;
 }
 
 #mensaje {
@@ -160,15 +174,16 @@ table {
 }
 
 th,
-td,
-#score {
-    padding: 1rem;
+td {
+    padding: 2rem;
 }
+
 
 #score {
     margin: 2rem;
     width: 30rem;
     font-size: 1.3rem;
+    padding: 1rem;
 }
 
 #score, #instrucciones, table, #opciones button {
@@ -193,15 +208,14 @@ td,
 }
 
 #opciones button {
-    margin: .7rem;
+    margin: 1rem;
     width: 5rem;
     height: 5rem;
     font-size: .8rem;
     padding: .5rem;
-    background: rgba(255, 255, 255, 0.479);
+    background: rgba(255, 255, 255, 0.61);
     backdrop-filter: blur(8px);
-    border: 1px solid rgb(0, 0, 0);
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 
@@ -219,7 +233,7 @@ td,
 
 .containerJuego, #instrucciones {
     text-align: center;
-    margin: auto;
+    margin: 2rem auto;
 }
 
 /* Responsive */
@@ -249,7 +263,7 @@ td,
     }
 
     #instrucciones {
-        margin: 1.5rem;
+        margin: auto;
         width: 90%;
         font-size: 0.7rem;
         padding: 0.5rem;
