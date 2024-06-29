@@ -262,7 +262,13 @@ table{
 .containerJuego,
 #instrucciones {
     text-align: center;
-    margin: 2rem auto;
+    margin: auto;
+}
+
+.containerJuego {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
 }
 
 /* Responsive */

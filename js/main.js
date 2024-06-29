@@ -1,6 +1,18 @@
 // Traigo elementos del HTML.
 const loginForm = document.getElementById('loginForm');
 
+let mostrarToast = (mensaje, fondo) => {
+    Toastify({
+        text: mensaje,
+        duration: 4000,
+        close: true,
+        style: {
+            background: fondo,
+            border: "1px solid white"
+        },
+    }).showToast();
+};
+
 // Loguearse.
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -9,7 +21,7 @@ loginForm.addEventListener('submit', (e) => {
     const contrasena = document.getElementById('contrasena').value;
 
     // Obtengo la lista de usuarios desde localStorage
-    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    let usuarios = JSON.parse(localStorage.getItem('usuarios36886')) || [];
 
     // Busco si el usuario existe
     const usuarioExistente = usuarios.find(jugador => jugador.usuario === usuario);
@@ -19,28 +31,18 @@ loginForm.addEventListener('submit', (e) => {
         if (usuarioExistente.contrasena === contrasena) {
             usuarioExistente.ultimoLogin = new Date().toLocaleString();
             localStorage.setItem('usuarioActual', JSON.stringify(usuarioExistente));
-            Toastify({
-                text: `Bienvenido ${usuarioExistente.usuario}`,
-                duration: 3000,
-                close: true,
-                style: {
-                    background: "linear-gradient(187deg, rgba(58,58,58,1) 0%, rgba(167,175,184,1) 84%)",
-                    border: "1px solid white"
-                },
-            }).showToast();
+
+            let mensaje = `Bienvenido ${usuarioExistente.usuario}`;
+            let fondo = "linear-gradient(187deg, rgba(58,58,58,1) 0%, rgba(167,175,184,1) 84%)";
+            mostrarToast(mensaje, fondo);
+
             setTimeout(() => {
                 window.location.href = '../pages/tabla.html';
             }, 1500);
         } else {
-            Toastify({
-                text: 'Contraseña incorrecta. Inténtelo nuevamente.',
-                duration: 3000,
-                close: true,
-                style: {
-                    background: "linear-gradient(187deg, rgba(58,58,58,1) 0%, rgba(209,20,25,1) 84%)",
-                    border: "1px solid white"
-                },
-            }).showToast();
+            let mensaje = 'Contraseña incorrecta. Inténtelo nuevamente.';
+            let fondo = "linear-gradient(187deg, rgba(58,58,58,1) 0%, rgba(209,20,25,1) 84%)";
+            mostrarToast(mensaje, fondo);
         };
 
     } else {
@@ -49,29 +51,19 @@ loginForm.addEventListener('submit', (e) => {
         const usuarioExistenteEnRegistro = usuarios.find(jugador => jugador.usuario === usuario);
 
         if (usuarioExistenteEnRegistro) {
-            Toastify({
-                text: `El usuario '${usuario}' ya existe. Por favor, elija otro nombre de usuario.`,
-                duration: 3000,
-                close: true,
-                style: {
-                    background: "linear-gradient(187deg, rgba(58,58,58,1) 0%, rgba(209,20,25,1) 84%)",
-                    border: "1px solid white"
-                },
-            }).showToast();
+            let mensaje = `El usuario '${usuario}' ya existe. Por favor, elija otro nombre de usuario.`;
+            let fondo = "linear-gradient(187deg, rgba(58,58,58,1) 0%, rgba(209,20,25,1) 84%)";
+            mostrarToast(mensaje, fondo);
+
         } else {
             // Agrego el nuevo usuario a la lista y actualizo localStorage
             usuarios.push(nuevoUsuario);
-            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+            localStorage.setItem('usuarios36886', JSON.stringify(usuarios));
             localStorage.setItem('usuarioActual', JSON.stringify(nuevoUsuario));
-            Toastify({
-                text: `Usuario creado: ${nuevoUsuario.usuario}`,
-                duration: 3000,
-                close: true,
-                style: {
-                    background: "linear-gradient(187deg, rgba(58,58,58,1) 13%, rgba(41,209,20,1) 100%)",
-                    border: "1px solid white"
-                },
-            }).showToast();
+
+            let mensaje = `Usuario creado: ${nuevoUsuario.usuario}`;
+            let fondo = "linear-gradient(187deg, rgba(58,58,58,1) 13%, rgba(41,209,20,1) 100%)";
+            mostrarToast(mensaje, fondo);
             setTimeout(() => {
                 window.location.href = '../pages/tabla.html';
             }, 1500);
