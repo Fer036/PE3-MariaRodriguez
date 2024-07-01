@@ -24,6 +24,8 @@ function validarInput(input) {
     } else {
         input.setCustomValidity('');
     };
+
+    input.reportValidity();
 };
 
 // Loguearse.
